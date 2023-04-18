@@ -44,7 +44,7 @@ const Home = () => {
   };
 
   const handleClickAdd = () => {
-    if (nameInput !== "" || lastnameInput !== "" || positionInput !== "") {
+    if (nameInput !== "" && lastnameInput !== "" && positionInput !== "") {
       let newInput = {
         id: ID,
         name: nameInput,
