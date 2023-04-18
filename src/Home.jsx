@@ -44,20 +44,22 @@ const Home = () => {
   };
 
   const handleClickAdd = () => {
-    let newInput = {
-      id: ID,
-      name: nameInput,
-      lastname: lastnameInput,
-      position: positionInput,
-    };
-    let cloneEmployees = [...employees, newInput];
-    setEmployees([...cloneEmployees]);
+    if (nameInput !== "" || lastnameInput !== "" || positionInput !== "") {
+      let newInput = {
+        id: ID,
+        name: nameInput,
+        lastname: lastnameInput,
+        position: positionInput,
+      };
+      let cloneEmployees = [...employees, newInput];
+      setEmployees([...cloneEmployees]);
 
-    setNameInput("");
-    setLastnameInput("");
-    setPositionInput("");
+      setNameInput("");
+      setLastnameInput("");
+      setPositionInput("");
 
-    setID((prev) => (prev += 1));
+      setID((prev) => (prev += 1));
+    }
   };
 
   const handleClickDelete = (idx) => {
