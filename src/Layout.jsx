@@ -5,7 +5,7 @@ function Layout(props) {
   const { children } = props;
 
   return (
-    <div>
+    <div className="main-container">
       <Navbar />
       {children}
     </div>

@@ -78,13 +78,13 @@ const Home = () => {
     let cloneEmployees = [...employees];
     setEmployees([...cloneEmployees]);
 
-    let length = cloneEmployees.length;
+    let length = employees.length;
     setID(length);
   }, []);
 
   return (
     <Layout>
-      <div>
+      <div className="home-container">
         <div>
           <h1>
             {sector === "user"
@@ -94,9 +94,11 @@ const Home = () => {
               : "Generation Thailand - React Assessment"}
           </h1>
         </div>
-        <div>
-          <button onClick={() => handleSector("user")}>User Home Sector</button>
-          <button onClick={() => handleSector("admin")}>
+        <div className="home-btn-container">
+          <button onClick={() => handleSector("user")} className="sector-btn">
+            User Home Sector
+          </button>
+          <button onClick={() => handleSector("admin")} className="sector-btn">
             Admin Home Sector
           </button>
         </div>

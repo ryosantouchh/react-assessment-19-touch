@@ -2,7 +2,7 @@ import React from "react";
 
 const HomeUser = ({ employees }) => {
   return (
-    <div>
+    <div className="table-container">
       <table>
         <tr>
           <th>Name</th>

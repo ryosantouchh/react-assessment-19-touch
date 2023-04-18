@@ -15,9 +15,9 @@ const HomeAdmin = (props) => {
   } = props;
 
   return (
-    <div>
-      <div>
-        <h2>Create User Here</h2>
+    <div className="admin-container">
+      <h2>Create User Here</h2>
+      <div className="input-container">
         <input
           type="text"
           placeholder="Name"
@@ -39,29 +39,41 @@ const HomeAdmin = (props) => {
         <button onClick={() => handleClickAdd()}>Add</button>
       </div>
 
-      <table>
-        <tr>
-          <th>Name</th>
-          <th>Lastname</th>
-          <th>Position</th>
-          <th>Action</th>
-        </tr>
-        {employees.map((item, idx) => {
-          return (
-            <tr key={idx + 1}>
-              <td>{item.name}</td>
-              <td>{item.lastname}</td>
-              <td>{item.position}</td>
-              <td>
-                <button onClick={() => handleClickDelete(idx)}>Delete</button>
-              </td>
-            </tr>
-          );
-        })}
-      </table>
+      <div className="table-container">
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Lastname</th>
+            <th>Position</th>
+            <th>Action</th>
+          </tr>
+          {employees.map((item, idx) => {
+            return (
+              <tr key={idx + 1}>
+                <td>{item.name}</td>
+                <td>{item.lastname}</td>
+                <td>{item.position}</td>
+                <td>
+                  <button
+                    onClick={() => handleClickDelete(idx)}
+                    className="delete-btn"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            );
+          })}
+        </table>
+      </div>
 
       {employees.length !== 0 ? (
-        <button onClick={() => handleClickDeleteAll()}>Delete All Data</button>
+        <button
+          onClick={() => handleClickDeleteAll()}
+          className="delete-all-btn"
+        >
+          Delete All Data
+        </button>
       ) : null}
     </div>
   );
