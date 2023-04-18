@@ -1,0 +1,25 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  /* display: flex; */
+  max-width: 1140px;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar ul {
+  display: flex;
+  /* justify-content: end; */
+}
+
+.navbar ul li {
+  list-style: none;
+}
